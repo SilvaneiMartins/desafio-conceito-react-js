@@ -1,0 +1,41 @@
+:root {
+    --blue: #273fad;
+    --shapePrice: #1a1a1d;
+    --shapes: #29292e;
+    --shapes-container: "#29292e";
+    --green: #3fad27;
+    --red: #ad273f;
+    --background: #121214;
+    --text-title: #ebebeb;
+    --text: #1c1c29;
+    --text-ligth: #a8a8b3;
+    --text-light: #a09cb1;
+    --taskList: "#202024";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px "Poppins", Arial, sans-serif;
+    color: var(--text-ligth);
+}
+
+input,
+textarea {
+    font-family: "Poppins";
+}
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+button,
+.checkmark {
+    cursor: pointer;
+}
