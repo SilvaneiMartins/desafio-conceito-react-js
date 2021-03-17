@@ -3,12 +3,10 @@ import React from "react";
 import { TaskList } from "../../components/TaskList";
 
 describe("App Page", () => {
-    it("Deve ser capaz de adicionar uma tarefa", async () => {
+    it("should be able to add a task", async () => {
         render(<TaskList />);
 
-        const taskInput = screen.getByPlaceholderText(
-            "Adicionar uma nova tarefa"
-        );
+        const taskInput = screen.getByPlaceholderText("Adicionar novo todo");
         const addTaskButton = screen.getByTestId("add-task-button");
 
         fireEvent.change(taskInput, {
@@ -40,7 +38,7 @@ describe("App Page", () => {
         expect(addedSecondTaskTitle.parentElement).not.toHaveClass("completed");
     });
 
-    it("Não deve ser capaz de adicionar uma tarefa com um título vazio", () => {
+    it("should not be able to add a task with a empty title", () => {
         render(<TaskList />);
 
         const addTaskButton = screen.getByTestId("add-task-button");
@@ -49,7 +47,7 @@ describe("App Page", () => {
 
         expect(screen.queryByTestId("task")).not.toBeInTheDocument();
 
-        const taskInput = screen.getByPlaceholderText("Adicionar uma nova tarefa");
+        const taskInput = screen.getByPlaceholderText("Adicionar novo todo");
 
         fireEvent.change(taskInput, {
             target: {
@@ -64,10 +62,10 @@ describe("App Page", () => {
         expect(addedFirstTaskTitle).toHaveTextContent("Desafio ReactJS Ignite");
     });
 
-    it("Deve ser capaz de remover uma tarefa", async () => {
+    it("should be able to remove a task", async () => {
         render(<TaskList />);
 
-        const taskInput = screen.getByPlaceholderText("Adicionar uma nova tarefa");
+        const taskInput = screen.getByPlaceholderText("Adicionar novo todo");
         const addTaskButton = screen.getByTestId("add-task-button");
 
         fireEvent.change(taskInput, {
@@ -100,10 +98,10 @@ describe("App Page", () => {
         expect(addedSecondTaskTitle).toBeInTheDocument();
     });
 
-    it("Deve ser capaz de verificar uma tarefa", () => {
+    it("should be able to check a task", () => {
         render(<TaskList />);
 
-        const taskInput = screen.getByPlaceholderText("Adicionar uma nova tarefa");
+        const taskInput = screen.getByPlaceholderText("Adicionar novo todo");
         const addTaskButton = screen.getByTestId("add-task-button");
 
         fireEvent.change(taskInput, {
